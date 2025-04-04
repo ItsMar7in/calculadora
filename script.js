@@ -18,3 +18,10 @@ const calculate = () => {
         displayValue = "";
     }
 };
+function deleteLast() {
+    let display = document.getElementById("display");
+    display.innerText = display.innerText.slice(0, -1);
+    if (display.innerText === "") {
+        display.innerText = "0";
+    }
+}
