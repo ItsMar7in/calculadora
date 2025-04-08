@@ -1,52 +1,85 @@
+/* Estilo base del cuerpo */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #202020;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #333;
+    margin: 0;
 }
+
+/* Contenedor principal de la calculadora */
 .calculator {
-    background: #222;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    width: 320px;
+    background: #1e1e1e;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+/* Pantalla de resultados */
 .display {
-    background: black;
-    color: white;
-    font-size: 2em;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 2.2em;
     text-align: right;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    overflow-x: auto;
+    width: 100%;
 }
+
+/* Grid de botones */
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
+    gap: 15px;
+    width: 100%;
 }
-.btn {
-    background: #555;
+
+/* Estilo común de los botones */
+.btn-custom {
+    background: #2d2d2d;
     color: white;
     font-size: 1.5em;
     border: none;
-    padding: 15px;
-    border-radius: 5px;
+    padding: 20px;
+    border-radius: 10px;
     cursor: pointer;
-}
-.btn:hover {
-    background: #777;
-}
-.large {
-    grid-column: span 2;
-    background-color: #d896f1; /* Color similar al de la imagen */
-    color: black;
-}
-.large:hover {
-    background-color: #c07ce0;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.2s ease;
 }
 
+/* Hover para botones */
+.btn-custom:hover {
+    background: #3d3d3d;
+}
 
+/* Botón igual diferenciado */
+.btn-equal {
+    grid-column: span 2; /* Ocupa dos columnas */
+    background-color: #c500d7;
+    color: white;
+}
+
+.btn-equal:hover {
+    background-color: #c500d7;
+}
+
+/* Estilos responsive para pantallas pequeñas */
+@media (max-width: 576px) {
+    .calculator {
+        padding: 15px;
+    }
+    .btn-custom {
+        padding: 18px;
+        font-size: 1.2em;
+    }
+}

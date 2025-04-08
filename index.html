@@ -1,36 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
-    <link rel="stylesheet" href="styles.css">
+  <!-- Configuración básica del documento -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculadora</title>
+  <!-- Enlace a los estilos externos -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="calculator">
-        <div class="display" id="display">ola</div>
-        <div class="buttons">
-            <button class="btn" onclick="clearDisplay()">C</button>
-            <button class="btn" onclick="deleteLast()">←</button>
-            <button class="btn" onclick="appendToDisplay('%')">%</button>
-            <button class="btn" onclick="appendToDisplay('/')">÷</button>
-            <button class="btn" onclick="appendToDisplay('7')">7</button>
-            <button class="btn" onclick="appendToDisplay('8')">8</button>
-            <button class="btn" onclick="appendToDisplay('9')">9</button>
-            <button class="btn" onclick="appendToDisplay('*')">×</button>
-            <button class="btn" onclick="appendToDisplay('4')">4</button>
-            <button class="btn" onclick="appendToDisplay('5')">5</button>
-            <button class="btn" onclick="appendToDisplay('6')">6</button>
-            <button class="btn" onclick="appendToDisplay('-')">−</button>
-            <button class="btn" onclick="appendToDisplay('1')">1</button>
-            <button class="btn" onclick="appendToDisplay('2')">2</button>
-            <button class="btn" onclick="appendToDisplay('3')">3</button>
-            <button class="btn" onclick="appendToDisplay('+')">+</button>
-            <button class="btn" onclick="appendToDisplay('0')">0</button>
-            <button class="btn" onclick="appendToDisplay('.')">.</button>
-            <button class="btn large" onclick="calculate()">=</button>
-        </div>
+  <!-- Contenedor principal de la calculadora -->
+  <div class="calculator">
+    <!-- Pantalla donde se muestra el resultado -->
+    <div id="display" class="display">0</div>
+
+    <!-- Contenedor de botones -->
+    <div class="buttons">
+      <!-- Botones funcionales -->
+      <button class="btn-custom" onclick="clearDisplay()">C</button> <!-- Limpia todo -->
+      <button class="btn-custom" onclick="deleteLast()">⌫</button>   <!-- Borra último dígito -->
+      <button class="btn-custom" onclick="setOperator('/')">÷</button> <!-- Operador división -->
+      <button class="btn-custom" onclick="setOperator('*')">×</button> <!-- Operador multiplicación -->
+
+      <!-- Números y operadores -->
+      <button class="btn-custom" onclick="appendNumber('7')">7</button>
+      <button class="btn-custom" onclick="appendNumber('8')">8</button>
+      <button class="btn-custom" onclick="appendNumber('9')">9</button>
+      <button class="btn-custom" onclick="setOperator('-')">−</button>
+
+      <button class="btn-custom" onclick="appendNumber('4')">4</button>
+      <button class="btn-custom" onclick="appendNumber('5')">5</button>
+      <button class="btn-custom" onclick="appendNumber('6')">6</button>
+      <button class="btn-custom" onclick="setOperator('+')">+</button>
+
+      <button class="btn-custom" onclick="appendNumber('1')">1</button>
+      <button class="btn-custom" onclick="appendNumber('2')">2</button>
+      <button class="btn-custom" onclick="appendNumber('3')">3</button>
+      <button class="btn-equal btn-custom" onclick="calculate()">=</button> <!-- Igual -->
+
+      <button class="btn-custom" onclick="appendNumber('0')">0</button>
+      <button class="btn-custom" onclick="appendNumber('.')">.</button> <!-- Punto decimal -->
     </div>
-    <script src="script.js"></script>
+  </div>
+
+  <!-- Enlace al archivo de JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
